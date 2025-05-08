@@ -185,6 +185,7 @@ impl zed::Extension for VueExtension {
                     .join(&server_path)
                     .to_string_lossy()
                     .to_string(),
+                "--max-old-space-size=4096".to_string(),
                 "--stdio".to_string(),
             ],
             env: Default::default(),

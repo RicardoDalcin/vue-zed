@@ -1,5 +1,5 @@
-id = "vue"
-name = "Vue"
+id = "vue-dev"
+name = "Vue - Dev"
 description = "Vue support."
 version = "0.2.5"
 schema_version = 1
