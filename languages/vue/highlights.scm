@@ -1,4 +1,4 @@
-(attribute) @property
+(attribute) @function
 (directive_attribute) @property
 (quoted_attribute_value) @string
 (interpolation) @punctuation.special
@@ -11,8 +11,14 @@
 ((tag_name) @tag
  (#not-match? @tag "^[A-Z]"))
 
-(directive_name) @keyword
-(directive_argument) @constant
+; : and @ directives are properties
+((directive_name) @property
+ (#match? @property "[:@]"))
+
+((directive_name) @keyword
+ (#not-match? @keyword "[:@]"))
+
+(directive_argument) @function
 
 ; Adjust the captures only for brackets, not entire tags
 ((start_tag "<" @punctuation.bracket)
